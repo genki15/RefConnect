@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RefConnect</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="logo">RefConnect</string>
+    <string name="searching_volunteer">I am looking for volunteers</string>
+    <string name="volunteer">I am a volunteer</string>
+    <string name="refugee_post_button">Post</string>
+</resources>

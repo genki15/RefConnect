@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="1">
+    ​
+    ​
+    <RelativeLayout  android:layout_width="match_parent"
+                     android:layout_height="match_parent">
+
+        <TextView android:id="@+id/LocationLabel"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Location"
+                  android:layout_above="@+id/KeyWordsTextField"
+                  android:layout_marginBottom="10dp"
+                  android:layout_marginStart="10dp"
+                  android:layout_marginLeft="10dp"
+                  android:textSize="20sp"/>
+
+        <TextView android:id="@+id/Filter"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Filter"
+                  android:layout_above="@id/LocationLabel"
+                  android:layout_marginBottom="25dp"
+                  android:layout_marginStart="10dp"
+                  android:layout_marginLeft="10dp"
+                  android:textSize="25sp"
+                  android:textStyle="bold"/>
+        ​
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#FF909090"
+            android:layout_above="@+id/LocationTextField"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        ​
+        ​
+        <EditText android:id="@+id/LocationTextField"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:hint="Place"
+                  android:layout_marginBottom="0dp"
+                  android:layout_marginRight="10dp"
+                  android:layout_marginEnd="10dp"
+                  android:layout_above="@+id/KeyWordsTextField"
+                  android:layout_alignParentRight="true"
+                  android:layout_alignParentEnd="true" />
+        ​
+        <TextView android:id="@+id/KeyWordsLabel"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="KeyWords"
+                  android:layout_marginTop="10dp"
+                  android:layout_below="@id/LocationLabel"
+                  android:layout_alignParentLeft="true"
+                  android:layout_alignParentStart="true"
+                  android:layout_marginStart="10dp"
+                  android:layout_marginLeft="10dp"
+                  android:textSize="20sp"
+            />
+        ​
+        <EditText android:id="@+id/KeyWordsTextField"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:hint="KeyWord"
+                  android:layout_above="@+id/SearchButton"
+                  android:layout_alignRight="@+id/LocationTextField"
+                  android:layout_alignEnd="@+id/LocationTextField"
+                  android:layout_marginBottom="20dp" />
+        ​
+        <Button android:text="Search"
+                android:id="@+id/SearchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true">
+            ​
+            ​
+        </Button>
+        ​
+    </RelativeLayout>
+    ​
+</LinearLayout>
