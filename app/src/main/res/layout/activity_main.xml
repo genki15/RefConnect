@@ -6,7 +6,6 @@
               android:background="@color/white"
     >
 
-
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -23,13 +22,15 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        android:text="@string/searching_volunteer" />
+        android:text="@string/searching_volunteer"
+        android:onClick="onClick"/>
     <Button
         android:id="@+id/volunteer_button"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        android:text="@string/volunteer"/>
+        android:text="@string/volunteer"
+        android:onClick="onClick"/>
 
     <LinearLayout
         android:orientation="horizontal"
