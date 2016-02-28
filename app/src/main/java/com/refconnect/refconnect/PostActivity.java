@@ -30,7 +30,7 @@ public class PostActivity extends AppCompatActivity {
 
         dbRef = new Firebase("https://refconnect.firebaseio.com/");
 
-        name = (EditText)findViewById(R.id.name);
+        name = (EditText)findViewById(R.id.name1);
         location = (EditText)findViewById(R.id.location);
         keywords = (EditText)findViewById(R.id.keywords);
         language = (EditText)findViewById(R.id.language);
@@ -41,18 +41,17 @@ public class PostActivity extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        post = new Post(getText(name), getText(location), getText(keywords), getText(language),date);
+
         final Button button = (Button) findViewById(R.id.post_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 if(view.getId() == R.id.post_button) {
+                    post = new Post(getText(name), getText(location), getText(keywords), getText(language),date);
                     button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybutton2_state));
                     dbRef.push().setValue(post);
                 }}
                     });
-
 }
-
     public String getText(EditText eT)
     {
        return eT.getText().toString();
