@@ -6,9 +6,12 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.firebase.client.ChildEventListener;
@@ -29,6 +32,8 @@ public class VolunteerSearch extends AppCompatActivity{
     private Firebase dbRef;
     private ArrayList<Post> listOfPosts;
     private ListView listView;
+    private Post[] postArray;
+    private Button srchBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,19 +44,41 @@ public class VolunteerSearch extends AppCompatActivity{
         Query queryRef = dbRef.orderByChild("name");
 
         listOfPosts=new ArrayList<Post>();
+        srchBtn=(Button) findViewById(R.id.SearchButton);
 
-        listView = (ListView) findViewById(R.id.listView);
+        srchBtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
 
-        /*ArrayAdapter<Post> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, android.R.id.text1, listOfPosts);*/
 
-        listView.setAdapter(adapter);
+                EditText editTextLocation = (EditText)findViewById(R.id.LocationTextField);
+                EditText editTextKeyW = (EditText)findViewById(R.id.KeyWordsTextField);
+                postArray = new Post[listOfPosts.size()];
+
+                for(Post posts : listOfPosts) {
+//                    if (posts.getKeywords() == editTextKeyW.getText().toString()
+//                            && posts.getLocation() == editTextLocation.getText().toString()) {
+
+                        for (int i = 0; i < listOfPosts.size(); i++) {
+
+                            postArray[i] = listOfPosts.get(i);
+                        }
+
+                        listView = (ListView) findViewById(R.id.listView);
+//                    }
+                    ListAdapter adapter = new PostAdapter(VolunteerSearch.this, postArray);
+
+                    listView.setAdapter(adapter);
+                }
+            }
+        });
 
         queryRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot snapshot, String previousChild) {
                 Post post = snapshot.getValue(Post.class);
                 listOfPosts.add(post);
+
+
             }
 
             @Override
@@ -70,8 +97,6 @@ public class VolunteerSearch extends AppCompatActivity{
             public void onCancelled(FirebaseError firebaseError) {
             }
         });
-
-
     }
 
 }

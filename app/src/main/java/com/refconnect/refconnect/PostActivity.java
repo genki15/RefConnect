@@ -1,5 +1,7 @@
 package com.refconnect.refconnect;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -50,9 +52,32 @@ public class PostActivity extends AppCompatActivity {
                         date= null;
                     }
 
-                    post = new Post(getText(name), getText(location), getText(keywords), getText(language),date);
-                    button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybutton2_state));
-                    dbRef.push().setValue(post);
+                    if(getText(name)!="" && getText(location)!=""&& getText(keywords)!="" && getText(language)!="") {
+                        post = new Post(getText(name), getText(location), getText(keywords), getText(language), date);
+                        button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybutton2_state));
+                        dbRef.push().setValue(post);
+                    }
+
+                    AlertDialog alertDialog = new AlertDialog.Builder(
+                            PostActivity.this).create();
+                    // Setting Dialog Title
+                    alertDialog.setTitle("Thank you");
+                    // Setting Dialog Message
+                    alertDialog.setMessage("Thank you for your entry!");
+                    // Setting Icon to Dialog
+                    alertDialog.setIcon(R.mipmap.logo);
+                    // Setting OK Button
+                    alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // Write your code here to execute after dialog closed
+                            //OLD --> Toast.makeText(getApplicationContext(), "You clicked on OK", Toast.LENGTH_SHORT).show();
+                            //link back to start
+                            Intent intent = new Intent(PostActivity.this, MainActivity.class);
+                            startActivity(intent);
+                        }
+                    });
+                    // Showing Alert Message
+                    alertDialog.show();
                 }}
                     });
 }

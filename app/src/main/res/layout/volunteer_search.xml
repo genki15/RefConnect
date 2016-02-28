@@ -2,26 +2,26 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:weightSum="1"
-    android:background="@color/white">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
     ​
     ​
-    <RelativeLayout  android:layout_width="match_parent"
-                     android:layout_height="match_parent">
 
+    <RelativeLayout  android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+        android:layout_gravity="top">
 
         <TextView android:id="@+id/LocationLabel"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="Location"
                   android:textColor="#000"
-            android:textSize="20sp"
-            android:layout_alignBottom="@+id/LocationTextField"
-            android:layout_alignLeft="@+id/view"
-            android:layout_alignStart="@+id/view"
-            android:layout_marginBottom="10dp"/>
+                android:textSize="20sp"
+                android:layout_alignBottom="@+id/LocationTextField"
+                android:layout_alignLeft="@+id/view"
+                android:layout_alignStart="@+id/view"
+                android:layout_marginBottom="10dp"/>
 
         <TextView android:id="@+id/Filter"
                   android:layout_width="match_parent"
@@ -31,8 +31,7 @@
                   android:textColor="#000"
                   android:textSize="25sp"
                   android:layout_above="@+id/view"
-                  android:layout_alignParentRight="true"
-                  android:layout_alignParentEnd="true"
+                  android:layout_alignParentTop="true"
                   android:shadowColor="#3a404b"
                   android:shadowDx="1"
                   android:shadowDy="1"
@@ -90,7 +89,6 @@
                   android:layout_height="40dp"
                   android:hint="KeyWord"
                   android:textColor="#0a4c63"
-                  android:layout_above="@+id/SearchButton"
                   android:layout_alignRight="@+id/LocationTextField"
                   android:layout_alignEnd="@+id/LocationTextField"
                   android:layout_marginBottom="20dp"
@@ -100,21 +98,24 @@
                   android:layout_marginEnd="10dp"
                   android:background="@drawable/edittext_state"/>
         ​
-        <Button android:text="Search"
-                android:id="@+id/SearchButton"
-                android:background="@drawable/mybutton3_state"
-                android:textColor="@color/white"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true">
-        </Button>
     </RelativeLayout>
+
+    <Button android:text="Search"
+            android:id="@+id/SearchButton"
+            android:background="@drawable/mybutton3_state"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="10dp">
+    </Button>
+
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="200dp">
     </ListView>
     ​
 </LinearLayout>
