@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
             Button button = (Button) findViewById(R.id.search_button);
 
-            button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybutton_onclick));
+            button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybutton_state));
 
             Intent intent = new Intent(this, PostActivity.class);
             startActivity(intent);
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
             Button button = (Button) findViewById(R.id.volunteer_button);
 
-            button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybutton_onclick));
+            button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybutton_state));
 
             Intent intent = new Intent(this, VolunteerSearch.class);
             startActivity(intent);
