@@ -3,6 +3,7 @@ package com.refconnect.refconnect;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,7 +41,7 @@ public class PostActivity extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        post = new Post(name.getText().toString(), location.getText().toString(), keywords.getText().toString(), language.getText().toString(),date);
+        post = new Post(getText(name), getText(location), getText(keywords), getText(language),date);
         final Button button = (Button) findViewById(R.id.post_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -50,4 +51,11 @@ public class PostActivity extends AppCompatActivity {
                 }}
                     });
 
-}}
+}
+
+    public String getText(EditText eT)
+    {
+       return eT.getText().toString();
+    }
+
+}
