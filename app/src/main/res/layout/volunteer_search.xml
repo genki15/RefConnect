@@ -4,7 +4,8 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@color/white">
     ​
     ​
     <RelativeLayout  android:layout_width="match_parent"
@@ -19,52 +20,61 @@
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="Location"
-                  android:layout_above="@+id/KeyWordsTextField"
-                  android:layout_marginBottom="10dp"
-                  android:layout_marginStart="10dp"
-                  android:layout_marginLeft="10dp"
-                  android:textSize="20sp"/>
+                  android:textColor="#0a4c63"
+            android:textSize="20sp"
+            android:layout_alignBottom="@+id/LocationTextField"
+            android:layout_alignLeft="@+id/view"
+            android:layout_alignStart="@+id/view"
+            android:layout_marginBottom="10dp"/>
 
         <TextView android:id="@+id/Filter"
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:text="Filter"
-                  android:layout_above="@id/LocationLabel"
-                  android:layout_marginBottom="25dp"
-                  android:layout_marginStart="10dp"
                   android:layout_marginLeft="10dp"
+                  android:textColor="#000"
                   android:textSize="25sp"
-                  android:textStyle="bold"/>
+                  android:textStyle="bold"
+                  android:layout_above="@+id/view"
+                  android:layout_alignParentRight="true"
+                  android:layout_alignParentEnd="true" />
         ​
         <View
             android:layout_width="fill_parent"
             android:layout_height="1dp"
-            android:background="#FF909090"
+            android:background="#000"
             android:layout_above="@+id/LocationTextField"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:id="@+id/view" />
         ​
         ​
         <EditText android:id="@+id/LocationTextField"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:hint="Place"
-                  android:layout_marginBottom="0dp"
-                  android:layout_marginRight="10dp"
-                  android:layout_marginEnd="10dp"
-                  android:layout_above="@+id/KeyWordsTextField"
-                  android:layout_alignParentRight="true"
-                  android:layout_alignParentEnd="true" />
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_above="@+id/KeyWordsTextField"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#0a4c63"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/edittext_state"
+                    android:layout_height="40dp"
+                    android:hint="Place"
+                    android:layout_marginBottom="10dp"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"/>
         ​
         <TextView android:id="@+id/KeyWordsLabel"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="KeyWords"
+                  android:textColor="#0a4c63"
                   android:layout_marginTop="10dp"
                   android:layout_below="@id/LocationLabel"
                   android:layout_alignParentLeft="true"
@@ -75,16 +85,26 @@
             />
         ​
         <EditText android:id="@+id/KeyWordsTextField"
+                  android:layout_alignParentRight="true"
+                  android:layout_alignParentEnd="true"
                   android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
+                  android:layout_height="40dp"
                   android:hint="KeyWord"
+                  android:textColor="#0a4c63"
                   android:layout_above="@+id/SearchButton"
                   android:layout_alignRight="@+id/LocationTextField"
                   android:layout_alignEnd="@+id/LocationTextField"
-                  android:layout_marginBottom="20dp" />
+                  android:layout_marginBottom="20dp"
+                  android:paddingLeft="10dip"
+                  android:paddingRight="10dip"
+                  android:layout_marginRight="10dp"
+                  android:layout_marginEnd="10dp"
+                  android:background="@drawable/edittext_state"/>
         ​
         <Button android:text="Search"
                 android:id="@+id/SearchButton"
+                android:background="@drawable/mybutton3_state"
+                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"

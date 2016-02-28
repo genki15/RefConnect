@@ -35,17 +35,21 @@ public class PostActivity extends AppCompatActivity {
         keywords = (EditText)findViewById(R.id.keywords);
         language = (EditText)findViewById(R.id.language);
         deadline = (EditText)findViewById(R.id.deadline);
-        try {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-        date = formatter.parse(deadline.getText().toString());
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
 
         final Button button = (Button) findViewById(R.id.post_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 if(view.getId() == R.id.post_button) {
+
+                    try {
+                        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+                        date = formatter.parse(getText(deadline));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                        System.out.println("ParseException caught, wrong date format");
+                        date= null;
+                    }
+
                     post = new Post(getText(name), getText(location), getText(keywords), getText(language),date);
                     button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybutton2_state));
                     dbRef.push().setValue(post);
