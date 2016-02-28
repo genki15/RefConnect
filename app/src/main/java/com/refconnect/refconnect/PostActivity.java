@@ -18,8 +18,7 @@ public class PostActivity extends AppCompatActivity {
 
         Firebase dbRef = new Firebase("https://refconnect.firebaseio.com/");
 
-        Firebase postRef = dbRef.child("post");
         Post post = new Post("first post", "london", "documents", "arabic", new Date());
-        postRef.setValue(post);
+        dbRef.push().setValue(post);
     }
 }
