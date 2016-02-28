@@ -106,7 +106,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/edittext_state"
-        android:layout_height="40dp"/>
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp"/>
     ​
     <Button
         android:id="@+id/post_button"
@@ -116,7 +117,6 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:text="@string/refugee_post_button"
-        android:layout_marginTop="40dp"
         android:layout_gravity="right"
         android:layout_marginRight="10dp"
         android:background="@drawable/mybutton2"/>

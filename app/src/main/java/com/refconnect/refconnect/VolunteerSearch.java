@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import java.io.InputStream;
@@ -25,6 +26,10 @@ public class VolunteerSearch extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.volunteer_search);
+
+        Button button = (Button) findViewById(R.id.volunteer_button);
+        button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybutton));
+
 
         map = (ImageView) findViewById(R.id.map);
 
