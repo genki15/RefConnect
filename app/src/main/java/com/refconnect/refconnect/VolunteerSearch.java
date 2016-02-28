@@ -1,5 +1,4 @@
 package com.refconnect.refconnect;
-
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
@@ -7,72 +6,72 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 
+import com.firebase.client.ChildEventListener;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.Query;
 import java.io.InputStream;
 import java.net.URL;
-
+import java.util.ArrayList;
 /**
  * Created by genki on 16/02/27.
  */
 public class VolunteerSearch extends AppCompatActivity{
-
     private double lat = 35.670930;
     private double lng = 139.50249;
     private ImageView map;
+    private Firebase dbRef;
+    private ArrayList<Post> listOfPosts;
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.volunteer_search);
-/*
-        map = (ImageView) findViewById(R.id.map);
+        Firebase.setAndroidContext(this);
+        dbRef = new Firebase("https://refconnect.firebaseio.com/");
+        Query queryRef = dbRef.orderByChild("name");
 
-        String imageUrl = "http://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lng
-                + "&zoom=10"
-                + "&size=640x640"
-                + "&scale=1"
-                + "&key=AIzaSyDUKe-EJql0HVzkwMvjXvu5B6CmCSmHpp4";
+        listOfPosts=new ArrayList<Post>();
 
-        try {
-            URL url = new URL(imageUrl);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        listView = (ListView) findViewById(R.id.listView);
 
-        new LoadImage().execute(imageUrl);
- */
-    }
-/*
-    private class LoadImage extends AsyncTask<String, String, Bitmap> {
+        /*ArrayAdapter<Post> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, android.R.id.text1, listOfPosts);*/
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-        protected Bitmap doInBackground(String... args) {
+        listView.setAdapter(adapter);
 
-            Bitmap bitmap = null;
-            if(args.length == 1){
-                Log.i("doInBack 1", "length = 1 ");
-
-                try {
-                    bitmap = BitmapFactory.decodeStream((InputStream) new URL(args[0]).getContent());
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        queryRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot snapshot, String previousChild) {
+                Post post = snapshot.getValue(Post.class);
+                listOfPosts.add(post);
             }
-            return bitmap;
-        }
-        protected void onPostExecute(Bitmap image) {
-            if(image != null){
-                map.setImageBitmap(image);
 
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
             }
-        }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+            }
+        });
+
+
     }
 
-    */
 }
