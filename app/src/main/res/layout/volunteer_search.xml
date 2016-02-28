@@ -11,16 +11,12 @@
     <RelativeLayout  android:layout_width="match_parent"
                      android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/map"/>
 
         <TextView android:id="@+id/LocationLabel"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="Location"
-                  android:textColor="#0a4c63"
+                  android:textColor="#000"
             android:textSize="20sp"
             android:layout_alignBottom="@+id/LocationTextField"
             android:layout_alignLeft="@+id/view"
@@ -34,10 +30,13 @@
                   android:layout_marginLeft="10dp"
                   android:textColor="#000"
                   android:textSize="25sp"
-                  android:textStyle="bold"
                   android:layout_above="@+id/view"
                   android:layout_alignParentRight="true"
-                  android:layout_alignParentEnd="true" />
+                  android:layout_alignParentEnd="true"
+                  android:shadowColor="#3a404b"
+                  android:shadowDx="1"
+                  android:shadowDy="1"
+                  android:shadowRadius="10"/>
         ​
         <View
             android:layout_width="fill_parent"
@@ -74,7 +73,7 @@
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="KeyWords"
-                  android:textColor="#0a4c63"
+                  android:textColor="#000"
                   android:layout_marginTop="10dp"
                   android:layout_below="@id/LocationLabel"
                   android:layout_alignParentLeft="true"
