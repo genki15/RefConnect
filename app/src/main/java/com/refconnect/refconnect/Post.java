@@ -8,27 +8,33 @@ import java.util.Date;
 public class Post {
     private String name;
     private String location;
-    private String[] keywords;
-    private String[] spokenLanguages;
+    private String keywords;
+    private String spokenLanguages;
     private Date postPeriod;
 
-    public Post(Date postPeriod, String[] spokenLanguages, String[] keywords, String location, String name) {
-        this.postPeriod = postPeriod;
-        this.spokenLanguages = spokenLanguages;
-        this.keywords = keywords;
-        this.location = location;
+    public Post() {}
+
+    public Post(String name,
+                String location,
+                String keywords,
+                String spokenLanguages,
+                Date postPeriod) {
         this.name = name;
+        this.location = location;
+        this.keywords = keywords;
+        this.spokenLanguages = spokenLanguages;
+        this.postPeriod = postPeriod;
     }
 
     public Date getPostPeriod() {
         return postPeriod;
     }
 
-    public String[] getSpokenLanguages() {
+    public String getSpokenLanguages() {
         return spokenLanguages;
     }
 
-    public String[] getKeywords() {
+    public String getKeywords() {
         return keywords;
     }
 

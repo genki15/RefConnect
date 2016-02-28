@@ -34,4 +34,6 @@ dependencies {
 
     // Include the Google Maps Android API from Google Play Services.
     compile 'com.google.android.gms:play-services-maps:8.1.0'
+
+    compile 'com.firebase:firebase-client-android:2.5.2+'
 }
