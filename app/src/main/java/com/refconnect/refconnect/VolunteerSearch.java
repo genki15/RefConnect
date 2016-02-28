@@ -26,7 +26,7 @@ public class VolunteerSearch extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.volunteer_search);
-
+/*
         map = (ImageView) findViewById(R.id.map);
 
         String imageUrl = "http://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lng
@@ -42,8 +42,9 @@ public class VolunteerSearch extends AppCompatActivity{
         }
 
         new LoadImage().execute(imageUrl);
+ */
     }
-
+/*
     private class LoadImage extends AsyncTask<String, String, Bitmap> {
 
         @Override
@@ -72,4 +73,6 @@ public class VolunteerSearch extends AppCompatActivity{
             }
         }
     }
+
+    */
 }
