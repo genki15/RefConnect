@@ -27,10 +27,6 @@ public class VolunteerSearch extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.volunteer_search);
 
-        Button button = (Button) findViewById(R.id.volunteer_button);
-        button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybutton));
-
-
         map = (ImageView) findViewById(R.id.map);
 
         String imageUrl = "http://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lng
