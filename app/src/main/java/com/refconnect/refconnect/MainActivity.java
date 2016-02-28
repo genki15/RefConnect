@@ -27,11 +27,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
+
         if(view.getId() == R.id.search_button){
+
+            Button button = (Button) findViewById(R.id.search_button);
+
+            button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybutton_onclick));
+
             Intent intent = new Intent(this, PostActivity.class);
             startActivity(intent);
 
         }else if(view.getId() == R.id.volunteer_button){
+
+            Button button = (Button) findViewById(R.id.volunteer_button);
+
+            button.setBackgroundDrawable(getResources().getDrawable(R.drawable.mybutton_onclick));
+
             Intent intent = new Intent(this, VolunteerSearch.class);
             startActivity(intent);
         }
