@@ -1,62 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical" android:layout_width="match_parent"
-              android:layout_height="match_parent">
-
+              android:layout_height="match_parent"
+              android:background="@drawable/background">
+    ​
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Enter name"
+        android:text="Refugee Access"
+        android:layout_marginTop="25dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#093C4D"
+        android:layout_marginLeft="10dp"
         />
+    ​
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:textColor="#093C4D"
+    />
     <EditText
         android:id="@+id/name"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
-
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/edittext_state"
+        android:layout_height="40dp"/>
+    ​
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Location"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#093C4D"
         />
     <EditText
         android:id="@+id/location"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
-
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/edittext_state"
+        android:layout_height="40dp"/>
+    ​
+    ​
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Keywords"
-        />
+        android:text="KeyWords"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:textColor="#093C4D"
+    />
     <EditText
         android:id="@+id/keywords"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
-
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/edittext_state"
+        android:layout_height="40dp"/>
+    ​
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Spoken language"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:textColor="#093C4D"
         />
+    ​
     <EditText
         android:id="@+id/laguage"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
-
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/edittext_state"
+        android:layout_height="40dp"/>
+    ​
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Post period"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold"
+        android:textColor="#093C4D"
         />
     <EditText
         android:id="@+id/postperiod"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
-
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/edittext_state"
+        android:layout_height="40dp"/>
+    ​
     <Button
         android:id="@+id/post_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/refugee_post_button"/>
-
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="@string/refugee_post_button"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/mybutton2"/>
+    ​
 </LinearLayout>
